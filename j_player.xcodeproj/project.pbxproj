@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C304AC5A24DFBA6500B6832F /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC5924DFBA6400B6832F /* NameView.swift */; };
+		C304AC5C24DFD25A00B6832F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC5B24DFD25A00B6832F /* AvatarView.swift */; };
+		C304AC5E24DFD2BD00B6832F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC5D24DFD2BD00B6832F /* UserView.swift */; };
+		C304AC6224DFDE0100B6832F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC6124DFDE0100B6832F /* UserModel.swift */; };
+		C304AC6624E1703F00B6832F /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC6524E1703E00B6832F /* ViewFactory.swift */; };
+		C304AC6824E1774500B6832F /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC6724E1774500B6832F /* NavigationView.swift */; };
+		C304AC6A24E179EA00B6832F /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304AC6924E179EA00B6832F /* BottomBarView.swift */; };
 		C3D2768D24DF631200C76102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2768C24DF631200C76102 /* AppDelegate.swift */; };
 		C3D2768F24DF631200C76102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2768E24DF631200C76102 /* SceneDelegate.swift */; };
 		C3D2769224DF631200C76102 /* j_player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3D2769024DF631200C76102 /* j_player.xcdatamodeld */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C304AC5924DFBA6400B6832F /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		C304AC5B24DFD25A00B6832F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		C304AC5D24DFD2BD00B6832F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		C304AC6124DFDE0100B6832F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C304AC6524E1703E00B6832F /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		C304AC6724E1774500B6832F /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		C304AC6924E179EA00B6832F /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		C3D2768924DF631200C76102 /* j_player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = j_player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D2768C24DF631200C76102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3D2768E24DF631200C76102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +74,14 @@
 			children = (
 				C3D2768C24DF631200C76102 /* AppDelegate.swift */,
 				C3D2768E24DF631200C76102 /* SceneDelegate.swift */,
+				C304AC6124DFDE0100B6832F /* UserModel.swift */,
 				C3D2769324DF631200C76102 /* ContentView.swift */,
+				C304AC5924DFBA6400B6832F /* NameView.swift */,
+				C304AC5B24DFD25A00B6832F /* AvatarView.swift */,
+				C304AC5D24DFD2BD00B6832F /* UserView.swift */,
+				C304AC6524E1703E00B6832F /* ViewFactory.swift */,
+				C304AC6724E1774500B6832F /* NavigationView.swift */,
+				C304AC6924E179EA00B6832F /* BottomBarView.swift */,
 				C3D2769524DF632F00C76102 /* Assets.xcassets */,
 				C3D2769A24DF632F00C76102 /* LaunchScreen.storyboard */,
 				C3D2769D24DF632F00C76102 /* Info.plist */,
@@ -150,9 +171,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D2768D24DF631200C76102 /* AppDelegate.swift in Sources */,
+				C304AC5C24DFD25A00B6832F /* AvatarView.swift in Sources */,
+				C304AC6824E1774500B6832F /* NavigationView.swift in Sources */,
+				C304AC6224DFDE0100B6832F /* UserModel.swift in Sources */,
+				C304AC6A24E179EA00B6832F /* BottomBarView.swift in Sources */,
 				C3D2768F24DF631200C76102 /* SceneDelegate.swift in Sources */,
+				C304AC6624E1703F00B6832F /* ViewFactory.swift in Sources */,
+				C304AC5A24DFBA6500B6832F /* NameView.swift in Sources */,
 				C3D2769424DF631200C76102 /* ContentView.swift in Sources */,
 				C3D2769224DF631200C76102 /* j_player.xcdatamodeld in Sources */,
+				C304AC5E24DFD2BD00B6832F /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
