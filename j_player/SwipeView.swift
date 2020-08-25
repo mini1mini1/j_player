@@ -12,15 +12,32 @@ struct SwipeView: View {
     @State private var offset: CGFloat = 0
     @State private var index = 0
     
-    let users = [...]
+    var users_ori = [UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:42),
+    UserMode(name:"민병현",hobby:"낚시",image:Image("flower"),age:40)]
+    
+    var users = [UserMode]()
+    
+    init() {
+        for ele in users_ori {
+        
+        users.append(ele)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     let spacing: CGFloat = 10
 
     var body: some View {
         GeometryReader { geometry in
             return ScrollView(.horizontal, showsIndicators: true) {
                 HStack(spacing: self.spacing) {
-                    ForEach(self.users) { user in
-                        UserView(userModel: user)
+                    ForEach(self.users, id: \.id) { user in
+                        UserView(userMode: user)
                             .frame(width: geometry.size.width)
                     }
                 }

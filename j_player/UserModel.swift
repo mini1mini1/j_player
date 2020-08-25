@@ -8,13 +8,16 @@
 
 import SwiftUI
 
-class UserMode {
+struct UserMode {
+    var id = UUID()
+    
     var name: String
     var hobby: String
     var image: Image
     var age: Int
     
     init(name: String, hobby: String, image: Image, age: Int) {
+        
         self.name = name
         self.hobby = hobby
         self.image = image
@@ -25,3 +28,5 @@ class UserMode {
 }
 
 var um = UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:42)
+
+
