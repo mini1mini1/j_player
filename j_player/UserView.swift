@@ -28,7 +28,7 @@ struct UserView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        UserView(userMode: UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:42))
+        UserView(userMode: UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:"jj"))
         
     }
 }

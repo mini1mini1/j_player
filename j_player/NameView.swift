@@ -2,7 +2,7 @@ import SwiftUI
 
 struct NameView: View {
     let name: String
-    let age: Int
+    let age: String
     let hobby: String
     
     var body: some View {
@@ -23,6 +23,6 @@ struct NameView: View {
 
 struct NameView_Previews: PreviewProvider {
     static var previews: some View {
-        NameView(name: "민병길",age: 42,hobby: "독서")
+        NameView(name: "민병길",age: "tt",hobby: "독서")
     }
 }

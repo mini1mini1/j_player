@@ -14,9 +14,9 @@ struct UserMode {
     var name: String
     var hobby: String
     var image: Image
-    var age: Int
+    var age: String
     
-    init(name: String, hobby: String, image: Image, age: Int) {
+    init(name: String, hobby: String, image: Image, age: String) {
         
         self.name = name
         self.hobby = hobby
@@ -27,6 +27,6 @@ struct UserMode {
 
 }
 
-var um = UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:42)
+
 
 

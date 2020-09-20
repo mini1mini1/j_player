@@ -22,6 +22,11 @@
 		C3D2769924DF632F00C76102 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D2769824DF632F00C76102 /* Preview Assets.xcassets */; };
 		C3D2769C24DF632F00C76102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D2769A24DF632F00C76102 /* LaunchScreen.storyboard */; };
 		DB209DBD24ED128200A4023D /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB209DBC24ED128200A4023D /* SwipeView.swift */; };
+		DB287B6824F8F9C500C62CFA /* test.db in Resources */ = {isa = PBXBuildFile; fileRef = DB287B6724F8F9C500C62CFA /* test.db */; };
+		DB287B6A24FF15CF00C62CFA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB287B6924FF15CF00C62CFA /* Person.swift */; };
+		DB287B6C24FF180500C62CFA /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB287B6B24FF180500C62CFA /* DBHelper.swift */; };
+		DB287B6E24FF1C9A00C62CFA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB287B6D24FF1C9A00C62CFA /* TestView.swift */; };
+		DB287B7024FF275600C62CFA /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB287B6F24FF275600C62CFA /* TestView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		C3D2769B24DF632F00C76102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3D2769D24DF632F00C76102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB209DBC24ED128200A4023D /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		DB287B6724F8F9C500C62CFA /* test.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.db; sourceTree = "<group>"; };
+		DB287B6924FF15CF00C62CFA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DB287B6B24FF180500C62CFA /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		DB287B6D24FF1C9A00C62CFA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DB287B6F24FF275600C62CFA /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 			children = (
 				C3D2768C24DF631200C76102 /* AppDelegate.swift */,
 				C3D2768E24DF631200C76102 /* SceneDelegate.swift */,
+				DB287B6724F8F9C500C62CFA /* test.db */,
 				C304AC6124DFDE0100B6832F /* UserModel.swift */,
 				C3D2769324DF631200C76102 /* ContentView.swift */,
 				C304AC5924DFBA6400B6832F /* NameView.swift */,
@@ -90,6 +101,10 @@
 				C3D2769024DF631200C76102 /* j_player.xcdatamodeld */,
 				C3D2769724DF632F00C76102 /* Preview Content */,
 				DB209DBC24ED128200A4023D /* SwipeView.swift */,
+				DB287B6924FF15CF00C62CFA /* Person.swift */,
+				DB287B6B24FF180500C62CFA /* DBHelper.swift */,
+				DB287B6D24FF1C9A00C62CFA /* TestView.swift */,
+				DB287B6F24FF275600C62CFA /* TestView2.swift */,
 			);
 			path = j_player;
 			sourceTree = "<group>";
@@ -129,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Byungkil Min";
 				TargetAttributes = {
 					C3D2768824DF631200C76102 = {
@@ -163,6 +178,7 @@
 				C3D2769C24DF632F00C76102 /* LaunchScreen.storyboard in Resources */,
 				C3D2769924DF632F00C76102 /* Preview Assets.xcassets in Resources */,
 				C3D2769624DF632F00C76102 /* Assets.xcassets in Resources */,
+				DB287B6824F8F9C500C62CFA /* test.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,13 +192,17 @@
 				C3D2768D24DF631200C76102 /* AppDelegate.swift in Sources */,
 				C304AC5C24DFD25A00B6832F /* AvatarView.swift in Sources */,
 				C304AC6824E1774500B6832F /* NavigationView.swift in Sources */,
+				DB287B6C24FF180500C62CFA /* DBHelper.swift in Sources */,
 				C304AC6224DFDE0100B6832F /* UserModel.swift in Sources */,
 				C304AC6A24E179EA00B6832F /* BottomBarView.swift in Sources */,
+				DB287B6E24FF1C9A00C62CFA /* TestView.swift in Sources */,
+				DB287B7024FF275600C62CFA /* TestView2.swift in Sources */,
 				C3D2768F24DF631200C76102 /* SceneDelegate.swift in Sources */,
 				C304AC6624E1703F00B6832F /* ViewFactory.swift in Sources */,
 				C304AC5A24DFBA6500B6832F /* NameView.swift in Sources */,
 				C3D2769424DF631200C76102 /* ContentView.swift in Sources */,
 				DB209DBD24ED128200A4023D /* SwipeView.swift in Sources */,
+				DB287B6A24FF15CF00C62CFA /* Person.swift in Sources */,
 				C3D2769224DF631200C76102 /* j_player.xcdatamodeld in Sources */,
 				C304AC5E24DFD2BD00B6832F /* UserView.swift in Sources */,
 			);
@@ -228,6 +248,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -288,6 +309,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
