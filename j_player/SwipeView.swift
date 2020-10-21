@@ -8,25 +8,21 @@
 
 import SwiftUI
 import SQLite3
+import AVFoundation
 
 struct SwipeView: View {
     @State private var offset: CGFloat = 0
     @State private var index = 0
-    /*
-    var users_ori = [UserMode(name:"민병길",hobby:"독서",image:Image("kitty"),age:42),
-    UserMode(name:"민병현",hobby:"낚시",image:Image("flower"),age:40)]
-    */
+    
     var users = [UserMode]()
+    
+    let synth = AVSpeechSynthesizer()
     
     init() {
         
         copyDatabase("test")
         populatePickerView(um: &users)
-        /*
-        for ele in users_ori {
         
-        users.append(ele)
-        }*/
     }
     
     
@@ -34,37 +30,101 @@ struct SwipeView: View {
 
     var body: some View {
         
-        GeometryReader { geometry in
-            return ScrollView(.horizontal, showsIndicators: true) {
-                HStack(spacing: self.spacing) {
-                    ForEach(self.users, id: \.id) { user in
-                        UserView(userMode: user)
-                            .frame(width: geometry.size.width)
+        ZStack{
+            GeometryReader { geometry in
+                return ScrollView(.horizontal, showsIndicators: true) {
+                    HStack(spacing: self.spacing) {
+                        ForEach(self.users, id: \.id) { user in
+                            UserView(userMode: user)
+                                .frame(width: geometry.size.width)
+                        }
                     }
                 }
+                .content.offset(x: self.offset)
+                .frame(width: geometry.size.width, alignment: .leading)
+                .gesture(
+                    DragGesture()
+                        .onChanged({ value in
+                            self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
+                            
+                            
+                        })
+                        .onEnded({ value in
+                            if -value.predictedEndTranslation.width > geometry.size.width / 2, self.index < self.users.count - 1 {
+                                self.index += 1
+                            }
+                            if value.predictedEndTranslation.width > geometry.size.width / 2, self.index > 0 {
+                                self.index -= 1
+                            }
+                            withAnimation { self.offset = -(geometry.size.width + self.spacing) * CGFloat(self.index) }
+                            
+                            readText(users[self.index].name)
+                            
+                            readText(users[self.index].age)
+                        })
+                )
             }
-            .content.offset(x: self.offset)
-            .frame(width: geometry.size.width, alignment: .leading)
-            .gesture(
-                DragGesture()
-                    .onChanged({ value in
-                        self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
-                    })
-                    .onEnded({ value in
-                        if -value.predictedEndTranslation.width > geometry.size.width / 2, self.index < self.users.count - 1 {
-                            self.index += 1
+            
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                        
+                        readText(users[self.index].name)
+                        
+                        readText(users[self.index].age)
+                        
+                        
+                        print(users[self.index].name)
+                    }) {
+                        HStack {
+                            Image(systemName: "speaker")
+                                .font(.title)
+                            /*Text("Sound")
+                                .fontWeight(.semibold)
+                                .font(.title)*/
                         }
-                        if value.predictedEndTranslation.width > geometry.size.width / 2, self.index > 0 {
-                            self.index -= 1
-                        }
-                        withAnimation { self.offset = -(geometry.size.width + self.spacing) * CGFloat(self.index) }
-                    })
-            )
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.red)
+                        .cornerRadius(40)
+                    }
+                }
+                           
+            }
+            
+        }
+        
+        
+    }
+    
+    private func readText(_ text:String) {
+        if let language = NSLinguisticTagger.dominantLanguage(for: text) {
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = AVSpeechSynthesisVoice(language: language)
+
+            //control speed and pitch
+            utterance.pitchMultiplier = 1
+            utterance.rate = 0.4
+            utterance.preUtteranceDelay = 0.6
+            //utterance.postUtteranceDelay = 0.2
+            synth.speak(utterance)
+            
+        } else {
+            
+            print("Unknown language")
+            
         }
     }
     
     
 }
+
+
+
 
 func populatePickerView(um: inout [UserMode]) {
     
@@ -82,7 +142,7 @@ func populatePickerView(um: inout [UserMode]) {
         
     }
     
-    let queryStatementString = "SELECT * FROM word1;"
+    let queryStatementString = "SELECT * FROM word2;"
     var queryStatement: OpaquePointer? = nil
 
     if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
@@ -90,7 +150,7 @@ func populatePickerView(um: inout [UserMode]) {
 
         while sqlite3_step(queryStatement) == SQLITE_ROW {
 
-            let id = sqlite3_column_int(queryStatement, 0)
+            _ = sqlite3_column_int(queryStatement, 0)
 
             let queryResultCol1 = sqlite3_column_text(queryStatement, 1)
             let queryResultCol2 = sqlite3_column_text(queryStatement, 2)
@@ -100,7 +160,7 @@ func populatePickerView(um: inout [UserMode]) {
             let qRC2 = String(cString: queryResultCol2!)
             let qRC3 = String(cString: queryResultCol3!)
 
-            print("\(id) | \(qRC1) | \(qRC2) | \(qRC3) ")
+            print(" \(qRC1) | \(qRC2) | \(qRC3) ")
             
             let user_ele :UserMode = UserMode(name:qRC1,hobby:qRC2,image:Image("kitty"),age:qRC3)
             um.append(user_ele)
@@ -116,7 +176,7 @@ func populatePickerView(um: inout [UserMode]) {
     
 }
 
-
+/*
 func copyDatabaseIfNeeded(_ database: String) {
 
     let fileManager = FileManager.default
@@ -144,6 +204,7 @@ func copyDatabaseIfNeeded(_ database: String) {
         print("Database file found at path: \(finalDatabaseURL.path)")
     }
 }
+ */
 
 func copyDatabase(_ database: String) {
 
